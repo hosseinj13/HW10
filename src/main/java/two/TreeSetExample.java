@@ -16,6 +16,9 @@ public class TreeSetExample {
 
         System.out.println("TreeSet 1: " + treeSet1);
         System.out.println("TreeSet 2: " + treeSet2);
+
+        TreeSet<Character> unionSet = findUnion(treeSet1, treeSet2);
+        System.out.println("Union Set: " + unionSet);
     }
 
     private static void addRandomChars(TreeSet<Character> treeSet) {
@@ -24,5 +27,12 @@ public class TreeSetExample {
             char randomChar = (char) ('a' + random.nextInt(26));
             treeSet.add(randomChar);
         }
+    }
+
+    private static TreeSet<Character> findUnion(TreeSet<Character> set1, TreeSet<Character> set2) {
+
+        TreeSet<Character> unionSet = new TreeSet<>(set1);
+        unionSet.addAll(set2);
+        return unionSet;
     }
 }
